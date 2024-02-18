@@ -5,6 +5,8 @@ fun main() {
      * if expressions
      * basically this is used to make a decision
      * and this expressions return boolean, therefore it can be assigned in variable
+     *
+     * note : kotlin not support for ternary operation
      */
     val openHours = 7
     val now = 7
