@@ -1,4 +1,4 @@
-package run_with_also
+package run_with_apply
 
 fun main() {
     // Scope Function with Lambda Receiver
