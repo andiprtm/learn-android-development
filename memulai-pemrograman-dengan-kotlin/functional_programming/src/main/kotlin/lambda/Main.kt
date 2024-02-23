@@ -29,4 +29,15 @@ fun main() {
     */
 }
 
+// regular function
+fun getMessage(name: String): String {
+    return "Hello $name"
+}
+
+// function with lambda
+val message :(String) -> String = { name: String ->
+    "Hello $name"
+}
+
+// function with lambda
 val messageLength = { message: String -> message.length }
