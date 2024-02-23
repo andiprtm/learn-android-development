@@ -1,6 +1,7 @@
 package run_with_also
 
 fun main() {
+    // Scope Function with Lambda Receiver
     /**
      * run
      */
