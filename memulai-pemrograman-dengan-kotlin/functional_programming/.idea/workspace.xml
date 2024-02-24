@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8260092f-ed17-4bf6-ac35-288c1d1c0733" name="Changes" comment="feat: a new course to be introduced with Scope Function with recursion in kotlin">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/function_inside_function/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/funtion_type/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/high_order_function/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/kotlin_standard_library/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/kotlin_standard_library/Person.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/lambda/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/lambda_with_receiver/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/let_and_also/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/member_references/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/recursion/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/run_with_apply/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/abstract_class/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/abstract_class/Cat.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/abstract_class/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/class_in_kotlin_oop/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/class_in_kotlin_oop/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/exception_handling/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/extensions/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/inheritances/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/inheritances/Cat.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/inheritances/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/interfaces/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/interfaces/Camel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/interfaces/IDrink.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/interfaces/IWalk.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/interfaces/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/lateinit_and_lazy_property/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/lateinit_and_lazy_property/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/modifier/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/modifier/Cat.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/modifier/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/modifier/Person.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/nullable_receiver/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/object_everywhere/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/overloading/Calculator.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/overloading/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/primary_cunstructor/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/primary_cunstructor/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/properties_in_kotlin_oop/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/properties_in_kotlin_oop/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/property_delegation/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/property_delegation/DelegateName.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/property_delegation/Hero.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/property_delegation/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/property_delegation/Person.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/secondary_constructor/Animal.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kotlin_oop/src/main/kotlin/secondary_constructor/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/anonymous_class/IFly.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/anonymous_class/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/collection_operations/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/companion_object/Library.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/companion_object/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/data_class/DataUser.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/data_class/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/enum_class/Color.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/enum_class/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/fold_drop_and_take/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/function_interface/IFly2.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/function_interface/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/list/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/list/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/map/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/nested_class_and_inner_class/Inner.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/nested_class_and_inner_class/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/nested_class_and_inner_class/Nested.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/sealed_class/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/sealed_class/Result.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/sequence/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/set/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/singleton_object/CentralLibrary.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/singleton_object/Main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../special_class_and_collection/src/main/kotlin/slice_distinct_and_chuncked_slice/Main.kt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2cj5wjTwLZnbRjNvpPE4U4U3RV9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "android.gradle.sync.needed": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8260092f-ed17-4bf6-ac35-288c1d1c0733" name="Changes" comment="" />
+      <created>1708612389393</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708612389393</updated>
+      <workItem from="1708612390397" duration="831000" />
+      <workItem from="1708674228013" duration="11216000" />
+      <workItem from="1708747067524" duration="3154000" />
+      <workItem from="1708751617357" duration="76000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <option name="closed" value="true" />
+      <created>1708612613009</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708612613009</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: a new course to be introduced with a function type in kotlin">
+      <option name="closed" value="true" />
+      <created>1708674927194</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708674927194</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: a new course to be introduced with lambda expression in kotlin">
+      <option name="closed" value="true" />
+      <created>1708677482626</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708677482626</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: a new course to be introduced with lambda expression in kotlin">
+      <option name="closed" value="true" />
+      <created>1708686502091</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708686502091</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: a new course to be introduced with high-order-function in kotlin">
+      <option name="closed" value="true" />
+      <created>1708688942965</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708688942965</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: a new course to be introduced with kotlin standard library in kotlin">
+      <option name="closed" value="true" />
+      <created>1708698892556</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708698892556</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: a new course to be introduced with run, with and also in kotlin">
+      <option name="closed" value="true" />
+      <created>1708707131032</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708707131032</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: a new course to be introduced with run, with and also in kotlin">
+      <option name="closed" value="true" />
+      <created>1708707253713</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708707253713</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix: a new course to be introduced with Scope Function with Lambda Argument (let and also) in kotlin">
+      <option name="closed" value="true" />
+      <created>1708707354795</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708707354795</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix: a new course to be introduced with Scope Function with Lambda Argument (let and also) in kotlin">
+      <option name="closed" value="true" />
+      <created>1708707365216</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708707365216</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: a new course to be introduced with Scope Function with Lambda Argument (let and also) in kotlin">
+      <option name="closed" value="true" />
+      <created>1708708720429</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708708720429</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: a new course to be introduced with Scope Function with member references in kotlin">
+      <option name="closed" value="true" />
+      <created>1708750249624</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708750249624</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: a new course to be introduced with Scope Function with function inside function in kotlin">
+      <option name="closed" value="true" />
+      <created>1708750673314</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708750673314</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: a new course to be introduced with Scope Function with recursion in kotlin">
+      <option name="closed" value="true" />
+      <created>1708751488938</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708751488938</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="feat: a new course to be introduced with a function type in kotlin" />
+    <MESSAGE value="feat: a new course to be introduced with lambda expression in kotlin" />
+    <MESSAGE value="feat: a new course to be introduced with high-order-function in kotlin" />
+    <MESSAGE value="feat: a new course to be introduced with kotlin standard library in kotlin" />
+    <MESSAGE value="feat: a new course to be introduced with run, with and also in kotlin" />
+    <MESSAGE value="fix: a new course to be introduced with run, with and also in kotlin" />
+    <MESSAGE value="fix: a new course to be introduced with Scope Function with Lambda Argument (let and also) in kotlin" />
+    <MESSAGE value="feat: a new course to be introduced with Scope Function with Lambda Argument (let and also) in kotlin" />
+    <MESSAGE value="feat: a new course to be introduced with Scope Function with member references in kotlin" />
+    <MESSAGE value="feat: a new course to be introduced with Scope Function with function inside function in kotlin" />
+    <MESSAGE value="feat: a new course to be introduced with Scope Function with recursion in kotlin" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: a new course to be introduced with Scope Function with recursion in kotlin" />
+  </component>
+</project>
