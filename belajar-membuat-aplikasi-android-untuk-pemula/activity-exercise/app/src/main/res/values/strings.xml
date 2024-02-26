@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ActivityExercise</string>
+    <string name="length">length</string>
+    <string name="width">width</string>
+    <string name="height">height</string>
+    <string name="calculate">calculate</string>
+    <string name="result">result</string>
+    <string name="hint_value_width">type a integer or decimal number</string>
+    <string name="hint_value_height">type a integer or decimal number</string>
+    <string name="hint_value_length">type a integer or decimal number</string>
 </resources>
