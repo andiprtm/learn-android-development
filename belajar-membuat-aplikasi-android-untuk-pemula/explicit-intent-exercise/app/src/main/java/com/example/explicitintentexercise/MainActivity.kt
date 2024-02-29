@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var btnMoveActivity: Button
     private lateinit var btnMoveWithDataActivity: Button
     private lateinit var btnMoveWithObject: Button
+    private lateinit var btnDialPhone: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // Move Activity With Object
         btnMoveWithObject = findViewById(R.id.btn_move_activity_object)
         btnMoveWithObject.setOnClickListener(this)
+
+        // Implicit Intent
+        btnDialPhone = findViewById(R.id.btn_dial_number)
+        btnDialPhone.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -55,6 +60,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val moveWithObject = Intent(this@MainActivity, MoveWithObjectActivity::class.java)
                 moveWithObject.putExtra(MoveWithObjectActivity.EXTRA_PERSON, person)
                 startActivity(moveWithObject)
+            }
+
+            R.id.btn_dial_number -> {
+
             }
         }
     }
