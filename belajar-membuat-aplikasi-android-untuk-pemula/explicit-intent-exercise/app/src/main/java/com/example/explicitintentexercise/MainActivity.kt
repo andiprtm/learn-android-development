@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.btn_move_activity_data -> {
-
+                val movewithDataIntent = Intent(this@MainActivity, MoveWithDataActivity::class.java)
+                movewithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "Andi")
+                movewithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 20)
+                startActivity(movewithDataIntent)
             }
         }
     }
