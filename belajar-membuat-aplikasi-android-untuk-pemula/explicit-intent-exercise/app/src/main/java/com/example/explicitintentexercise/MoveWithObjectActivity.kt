@@ -19,7 +19,8 @@ class MoveWithObjectActivity : AppCompatActivity() {
         val person = if (Build.VERSION.SDK_INT >= 33){
             intent.getParcelableExtra(EXTRA_PERSON, Person::class.java)
         } else {
-            intent.getParcelableExtra<Person>(EXTRA_PERSON)
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra(EXTRA_PERSON)
         }
 
         if (person != null){
