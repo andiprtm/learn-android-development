@@ -2,39 +2,53 @@ package com.example.explicitintentexercise.data
 
 import android.os.Parcel
 import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+// After Using Plugin Kotlin-Parcelize
+@Parcelize
 data class Person(
     val name: String?,
     val age: Int?,
     val email: String?,
     val city: String?
-) : Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readString(),
-        parcel.readValue(Int::class.java.classLoader) as? Int,
-        parcel.readString(),
-        parcel.readString()
-    ) {
-    }
+) : Parcelable
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(name)
-        parcel.writeValue(age)
-        parcel.writeString(email)
-        parcel.writeString(city)
-    }
+// Before Using Plugin Kotlin-Parcelize
 
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<Person> {
-        override fun createFromParcel(parcel: Parcel): Person {
-            return Person(parcel)
-        }
-
-        override fun newArray(size: Int): Array<Person?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
+/**
+ * data class Person(
+ *     val name: String?,
+ *     val age: Int?,
+ *     val email: String?,
+ *     val city: String?
+ * ) : Parcelable {
+ *     constructor(parcel: Parcel) : this(
+ *         parcel.readString(),
+ *         parcel.readValue(Int::class.java.classLoader) as? Int,
+ *         parcel.readString(),
+ *         parcel.readString()
+ *     ) {
+ *     }
+ *
+ *     override fun writeToParcel(parcel: Parcel, flags: Int) {
+ *         parcel.writeString(name)
+ *         parcel.writeValue(age)
+ *         parcel.writeString(email)
+ *         parcel.writeString(city)
+ *     }
+ *
+ *     override fun describeContents(): Int {
+ *         return 0
+ *     }
+ *
+ *     companion object CREATOR : Parcelable.Creator<Person> {
+ *         override fun createFromParcel(parcel: Parcel): Person {
+ *             return Person(parcel)
+ *         }
+ *
+ *         override fun newArray(size: Int): Array<Person?> {
+ *             return arrayOfNulls(size)
+ *         }
+ *     }
+ * }
+ */
