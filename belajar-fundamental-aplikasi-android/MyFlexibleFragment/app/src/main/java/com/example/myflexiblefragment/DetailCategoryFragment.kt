@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.myflexiblefragment.databinding.FragmentDetailCategoryBinding
 
 class DetailCategoryFragment : Fragment() {
@@ -34,6 +35,19 @@ class DetailCategoryFragment : Fragment() {
             val categoryname = arguments?.getString(EXTRA_NAME)
             fragmentDetailCategoryBinding.tvCategoryName.text = categoryname
             fragmentDetailCategoryBinding.tvCategoryDescription.text = description
+        }
+
+        fragmentDetailCategoryBinding.btnShowDialog.setOnClickListener{
+            val optionDialogFragment = OptionalDialogFragment()
+
+            val fragmentManager = childFragmentManager
+            optionDialogFragment.show(fragmentManager, OptionalDialogFragment::class.java.simpleName)
+        }
+    }
+
+    internal var optionDialogListener: OptionalDialogFragment.OnOptionDialogListener = object : OptionalDialogFragment.OnOptionDialogListener {
+        override fun onOptionChosen(text: String?) {
+            Toast.makeText(requireActivity(), text, Toast.LENGTH_SHORT).show()
         }
     }
 
