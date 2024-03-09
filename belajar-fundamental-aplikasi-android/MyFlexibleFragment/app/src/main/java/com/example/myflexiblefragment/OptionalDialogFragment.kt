@@ -45,6 +45,7 @@ class OptionalDialogFragment : DialogFragment() {
                 dialog?.dismiss()
             }
         }
+
         binding.btnClose.setOnClickListener{
             dialog?.cancel()
         }

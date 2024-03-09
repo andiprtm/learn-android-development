@@ -1,5 +1,6 @@
 package com.example.myflexiblefragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -42,6 +43,11 @@ class DetailCategoryFragment : Fragment() {
 
             val fragmentManager = childFragmentManager
             optionDialogFragment.show(fragmentManager, OptionalDialogFragment::class.java.simpleName)
+        }
+
+        binding.btnProfile.setOnClickListener{
+            val intent = Intent(requireActivity(), ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 
