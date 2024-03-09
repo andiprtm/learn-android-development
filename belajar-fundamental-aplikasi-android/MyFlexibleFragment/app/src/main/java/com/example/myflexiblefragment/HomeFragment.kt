@@ -5,13 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewParent
 import android.widget.Button
 import com.example.myflexiblefragment.databinding.ActivityMainBinding
 import com.example.myflexiblefragment.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(), View.OnClickListener {
 
-    private var fragmentHomeBinding: FragmentHomeBinding? = null
+    private lateinit var fragmentHomeBinding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +30,14 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+        if (v?.id == fragmentHomeBinding.btnCategroy.id){
+            val fragmentManager = parentFragmentManager
+            val categoryFragment = CategoryFragment()
+            fragmentManager.beginTransaction().apply {
+                replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 }
