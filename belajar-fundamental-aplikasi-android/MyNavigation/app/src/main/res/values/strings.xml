@@ -12,4 +12,5 @@
     <string name="category_name">Category Name</string>
     <string name="category_description">Category Description</string>
     <string name="to_home">Ke fragment Home</string>
+    <string name="stock">stock = %1$s</string>
 </resources>
