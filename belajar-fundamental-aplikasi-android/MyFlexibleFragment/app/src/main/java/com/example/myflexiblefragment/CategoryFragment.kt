@@ -38,7 +38,7 @@ class CategoryFragment : Fragment(), View.OnClickListener {
             detailCategoryFragment.description = description
 
             val fragmentManager = parentFragmentManager
-            fragmentManager?.beginTransaction()?.apply {
+            fragmentManager.beginTransaction().apply {
                 replace(R.id.frame_container, detailCategoryFragment, DetailCategoryFragment::class.java.simpleName)
                 addToBackStack(null)
                 commit()
