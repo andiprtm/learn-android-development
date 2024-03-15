@@ -1,5 +1,6 @@
 package com.example.myquote
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -30,6 +31,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         getRandomQuote()
+
+        binding.btnAllQuotes.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ListQuotesActivity::class.java))
+        }
     }
 
     private fun getRandomQuote() {
