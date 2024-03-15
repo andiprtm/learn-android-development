@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mytablayout"
+    namespace = "com.example.mybackgroundthread"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.mytablayout"
+        applicationId = "com.example.mybackgroundthread"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -48,5 +48,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.androidx.viewpager2)
 }

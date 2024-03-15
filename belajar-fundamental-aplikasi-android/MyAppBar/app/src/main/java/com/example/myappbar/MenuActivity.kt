@@ -33,6 +33,7 @@ class MenuActivity : AppCompatActivity() {
                     Toast.makeText(this@MenuActivity, searchView.text, Toast.LENGTH_SHORT).show()
                     false
                 }
+            searchView.add
         }
     }
 }
