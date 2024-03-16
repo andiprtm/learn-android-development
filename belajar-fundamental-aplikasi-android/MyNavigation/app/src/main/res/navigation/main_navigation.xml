@@ -39,20 +39,24 @@
         android:id="@+id/detailCategoryFragment"
         android:name="com.example.mynavigation.DetailCategoryFragment"
         android:label="fragment_detail_category"
-        tools:layout="@layout/fragment_detail_category" >
+        tools:layout="@layout/fragment_detail_category">
         <argument
             android:name="name"
-            app:argType="string"
-            android:defaultValue="default_name" />
+            android:defaultValue="default_name"
+            app:argType="string" />
         <argument
             android:name="stock"
-            app:argType="long"
-            android:defaultValue="0L" />
+            android:defaultValue="0L"
+            app:argType="long" />
         <action
             android:id="@+id/action_detailCategoryFragment_to_homeFragment"
             app:destination="@id/homeFragment"
             app:launchSingleTop="true"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="https://andinesia.my.id/detailCategoryFragment" />
     </fragment>
 </navigation>
