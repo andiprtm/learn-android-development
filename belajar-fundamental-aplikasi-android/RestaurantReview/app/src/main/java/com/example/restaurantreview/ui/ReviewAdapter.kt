@@ -1,18 +1,21 @@
 package com.example.restaurantreview.ui
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.restaurantreview.R
 import com.example.restaurantreview.data.response.CustomerReviewsItem
 import com.example.restaurantreview.databinding.ItemReviewBinding
 import com.example.restaurantreview.ui.ReviewAdapter.MyViewHolder
 
 class ReviewAdapter : ListAdapter<CustomerReviewsItem, MyViewHolder>(DIFF_CALLBACK) {
     class MyViewHolder(private val binding: ItemReviewBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(review: CustomerReviewsItem){
-            binding.tvItem.text = "${review.review}\n- ${review.name}"
+        fun bind(context : Context, review: CustomerReviewsItem){
+            binding.tvItem.text =
+                context.getString(R.string.review_text, review.review, review.name)
         }
     }
 
@@ -23,7 +26,7 @@ class ReviewAdapter : ListAdapter<CustomerReviewsItem, MyViewHolder>(DIFF_CALLBA
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val review = getItem(position)
-        holder.bind(review)
+        holder.bind(holder.itemView.context, review)
     }
 
     companion object{
