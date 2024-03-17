@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.ViewParent
 import android.widget.Button
+import androidx.fragment.app.commit
 import com.example.myflexiblefragment.databinding.ActivityMainBinding
 import com.example.myflexiblefragment.databinding.FragmentHomeBinding
 
@@ -33,10 +34,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
         if (v?.id == fragmentHomeBinding.btnCategroy.id){
             val fragmentManager = parentFragmentManager
             val categoryFragment = CategoryFragment()
-            fragmentManager.beginTransaction().apply {
-                replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
+            fragmentManager.commit {
                 addToBackStack(null)
-                commit()
+                replace(R.id.frame_container, categoryFragment, CategoryFragment::class.java.simpleName)
             }
         }
     }
