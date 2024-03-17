@@ -54,9 +54,5 @@
             app:launchSingleTop="true"
             app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
-        <deepLink
-            android:id="@+id/deepLink"
-            android:autoVerify="true"
-            app:uri="https://andinesia.my.id/detailCategoryFragment" />
     </fragment>
 </navigation>
