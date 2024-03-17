@@ -2,7 +2,6 @@ package com.example.restaurantreview
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.activity.enableEdgeToEdge
@@ -14,15 +13,11 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.restaurantreview.data.response.CustomerReviewsItem
-import com.example.restaurantreview.data.response.Response
-import com.example.restaurantreview.data.response.ResponsePost
 import com.example.restaurantreview.data.response.Restaurant
-import com.example.restaurantreview.data.retrofit.ApiConfig
 import com.example.restaurantreview.databinding.ActivityMainBinding
 import com.example.restaurantreview.ui.MainActivityViewModel
 import com.example.restaurantreview.ui.ReviewAdapter
-import retrofit2.Call
-import retrofit2.Callback
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val mainActivityViewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
+        mainActivityViewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         mainActivityViewModel.restaurant.observe(this){ restaurant ->
             setDataRestaurant(restaurant)
         }
@@ -58,6 +53,16 @@ class MainActivity : AppCompatActivity() {
 
         mainActivityViewModel.isLoading.observe(this){
             showLoading(it)
+        }
+
+        mainActivityViewModel.snackbarText.observe(this) {
+            it.getContentIfNotHandled()?.let { snackbarText ->
+                Snackbar.make(
+                    window.decorView.rootView,
+                    snackbarText,
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
 
         binding.btnSend.setOnClickListener { view ->
@@ -88,10 +93,5 @@ class MainActivity : AppCompatActivity() {
         } else {
             binding.progressBar.visibility = View.INVISIBLE
         }
-    }
-
-    companion object {
-        private const val TAG = "MainActivity"
-        private const val RESTAURANT_ID = "uewq1zg2zlskfw1e867"
     }
 }

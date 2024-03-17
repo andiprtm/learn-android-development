@@ -1,5 +1,6 @@
 package com.example.restaurantreview.ui
 
+import Event
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -23,6 +24,9 @@ class MainActivityViewModel: ViewModel() {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
+    private val _snackbarText = MutableLiveData<Event<String>>()
+    val snackbarText: LiveData<Event<String>> = _snackbarText
 
     init {
         findRestaurant()
@@ -67,6 +71,7 @@ class MainActivityViewModel: ViewModel() {
 
                 if (response.isSuccessful && responBody != null) {
                     _listReview.value = response.body()?.customerReviews
+                    _snackbarText.value = Event(response.body()?.message.toString())
                 } else {
                     Log.e(TAG, "onFailure: ${response.message()}")
                 }
