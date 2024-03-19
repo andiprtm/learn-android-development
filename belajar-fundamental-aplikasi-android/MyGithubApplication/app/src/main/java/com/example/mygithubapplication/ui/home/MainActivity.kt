@@ -52,11 +52,4 @@ class MainActivity : AppCompatActivity() {
         adapter.submitList(listGithubUser)
     }
 
-    private fun showLoading(state: Boolean) {
-        if (state) {
-            binding.mainProgressBar.visibility = View.VISIBLE
-        } else {
-            binding.mainProgressBar.visibility = View.INVISIBLE
-        }
-    }
 }
