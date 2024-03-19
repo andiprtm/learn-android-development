@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">MyGithubApplication</string>
+
+    <string name="search">search</string>
+    <string name="ini_foto_profile">ini foto profile</string>
+    <string name="pic">pic</string>
+    <string name="search_hint">Masukkan Username yang Ingin Dicari</string>
+    <string name="favoriteduser">favorite user</string>
+    <string name="avatar">avatar</string>
+    <string name="followers_title">Followers</string>
+    <string name="following_title">Following</string>
+    <string name="noname">(Nama belum di atur oleh pengguna).</string>
+    <string name="nobio">(Bio belum di atur oleh pengguna).</string>
+    <string name="following">%d\n following</string>
+    <string name="follower">%d\n follower</string>
+    <string name="repository">%d\n repository</string>
+    <string name="gist">%d\n gist</string>
+    <string name="nolocation">(Lokasi belum diatur oleh pengguna).</string>
+    <string name="nocompany">(Perusahaan belum diatur oleh pengguna).</string>
+    <string name="username_detail">%s\'s profile</string>
+    <string name="pekerjaan">pekerjaan</string>
+    <string name="lokasi_user">lokasi user</string>
+    <string name="searchbar_hint">Masukkan Kata</string>
 </resources>
