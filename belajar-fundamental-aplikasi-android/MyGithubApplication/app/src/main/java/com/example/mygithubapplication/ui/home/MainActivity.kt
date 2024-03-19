@@ -13,10 +13,12 @@ import com.example.mygithubapplication.R
 import com.example.mygithubapplication.data.response.ItemsItem
 import com.example.mygithubapplication.databinding.ActivityMainBinding
 import com.example.mygithubapplication.ui.home.adapter.MainActivityAdapter
+import com.example.mygithubapplication.util.Render
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val mainActivityViewModel by viewModels<MainActivityViewModel>()
+    private val helper = Render()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,7 +35,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainActivityViewModel.isLoading.observe(this) {
-            showLoading(it)
+            binding.let { view ->
+                helper.showLoading(it, view.mainProgressBar)
+            }
         }
 
         val layoutManager = LinearLayoutManager(this)
