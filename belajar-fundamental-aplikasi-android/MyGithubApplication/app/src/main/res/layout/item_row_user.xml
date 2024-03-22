@@ -12,14 +12,12 @@
     android:layout_marginBottom="4dp"
     app:cardElevation="4dp"
     app:cardMaxElevation="4dp"
-    app:cardBackgroundColor="@color/secondary_gray"
     app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp">
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/image_card_view"

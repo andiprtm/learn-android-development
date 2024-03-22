@@ -17,7 +17,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "GITHUB_KEY", "\"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\"")
+        buildConfigField("String", "GITHUB_KEY", "\"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\"")
     }
 
     buildTypes {
@@ -55,4 +55,5 @@ dependencies {
     implementation(libs.bundles.retrofit)
     implementation(libs.bundles.livedata)
     implementation(libs.androidx.viewpager2)
+    implementation(libs.androidx.splashscreen)
 }

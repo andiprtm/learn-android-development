@@ -2,7 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyGithubApplication" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorPrimary">@color/white</item>
     </style>
 
     <style name="Theme.MyGithubApplication" parent="Base.Theme.MyGithubApplication" />
@@ -10,8 +11,8 @@
     <style name="TextContent">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/secondary_gray</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
     </style>
 
     <style name="TextContent.Title">
@@ -30,6 +31,6 @@
     </style>
 
     <style name="TextContent.Details">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">15sp</item>
     </style>
 </resources>

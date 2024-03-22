@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.example.mygithubapplication.data.response.GithubResponse
 import com.example.mygithubapplication.data.response.ItemsItem
 import com.example.mygithubapplication.data.retrofit.ApiConfig
+import com.example.mygithubapplication.util.Event
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -19,11 +20,14 @@ class MainActivityViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
+    private val _snackbarText = MutableLiveData<Event<String>>()
+    val snackbarText: LiveData<Event<String>> = _snackbarText
+
     init {
         findUser("a")
     }
 
-    private fun findUser(username: String) {
+    fun findUser(username: String) {
         _isLoading.value = true
 
         val client = ApiConfig.getApiService().getSearchUser(username)
@@ -34,16 +38,18 @@ class MainActivityViewModel : ViewModel() {
             ) {
                 _isLoading.value = false
 
-                if (response.isSuccessful) {
-                    _listGithubUser.value = response.body()?.items
+                val items = response.body()?.items
+                if (items.isNullOrEmpty()) {
+                    _snackbarText.value = Event("User $username not found.")
                 } else {
-                    Log.d(TAG, "$response.message()")
+                    _listGithubUser.value = response.body()?.items
                 }
             }
 
             override fun onFailure(call: Call<GithubResponse>, t: Throwable) {
                 _isLoading.value = false
                 Log.e(TAG, "onFailure: ${t.message}")
+                _snackbarText.value = Event("Data failed to load, please try again.")
             }
 
         })

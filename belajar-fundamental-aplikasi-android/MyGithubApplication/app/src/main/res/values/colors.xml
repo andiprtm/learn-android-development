@@ -10,4 +10,5 @@
     <color name="darker_than_gray">#FF010412</color>
     <color name="detail_text">#FFD9CFCD</color>
     <color name="indicator_blue">#FF358FF8</color>
+    <color name="danger">#B81519</color>
 </resources>

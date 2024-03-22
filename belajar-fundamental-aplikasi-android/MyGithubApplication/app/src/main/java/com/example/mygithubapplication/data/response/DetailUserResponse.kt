@@ -20,7 +20,7 @@ data class DetailUserResponse(
 	val twitterUsername: Any,
 
 	@field:SerializedName("bio")
-	val bio: Any,
+	val bio: String,
 
 	@field:SerializedName("created_at")
 	val createdAt: String,
@@ -56,7 +56,7 @@ data class DetailUserResponse(
 	val collaborators: Int,
 
 	@field:SerializedName("company")
-	val company: Any,
+	val company: String,
 
 	@field:SerializedName("owned_private_repos")
 	val ownedPrivateRepos: Int,
@@ -116,7 +116,7 @@ data class DetailUserResponse(
 	val name: String,
 
 	@field:SerializedName("location")
-	val location: Any,
+	val location: String,
 
 	@field:SerializedName("node_id")
 	val nodeId: String
