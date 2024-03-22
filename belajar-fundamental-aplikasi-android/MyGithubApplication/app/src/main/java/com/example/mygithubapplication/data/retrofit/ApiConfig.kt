@@ -11,7 +11,7 @@ class ApiConfig {
     companion object {
         fun getApiService(): ApiService {
 
-            val loggingInterceptor = if(BuildConfig.DEBUG) {
+            val loggingInterceptor = if (BuildConfig.DEBUG) {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
             } else {
                 HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
@@ -20,7 +20,7 @@ class ApiConfig {
             val authInterceptor = Interceptor { chain ->
                 val req = chain.request()
                 val requestHeaders = req.newBuilder()
-                    .addHeader("Authorization", "Bearer "+BuildConfig.GITHUB_KEY)
+                    .addHeader("Authorization", "Bearer " + BuildConfig.GITHUB_KEY)
                     .build()
                 chain.proceed(requestHeaders)
             }

@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -47,9 +48,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         mainActivityViewModel.snackbarText.observe(this) {
-            val snackbar = it.getContentIfNotHandled()?.let {snackbarText ->
-                Snackbar.make(window.decorView.rootView, snackbarText, Snackbar.LENGTH_SHORT)}
-            snackbar?.setBackgroundTint(resources.getColor(R.color.danger))
+            val snackbar = it.getContentIfNotHandled()?.let { snackbarText ->
+                Snackbar.make(window.decorView.rootView, snackbarText, Snackbar.LENGTH_SHORT)
+            }
+            val color = ContextCompat.getColor(this, R.color.danger)
+            snackbar?.setBackgroundTint(color)
             snackbar?.show()
         }
 

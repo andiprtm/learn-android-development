@@ -9,13 +9,11 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mygithubapplication.R
 import com.example.mygithubapplication.data.response.ItemsItem
 import com.example.mygithubapplication.databinding.FragmentFollowBinding
 import com.example.mygithubapplication.ui.detail.DetailActivity
 import com.example.mygithubapplication.ui.detail.follow.FollowAdapter
 import com.example.mygithubapplication.util.Render
-import com.google.android.material.snackbar.Snackbar
 
 class FollowingFragment : Fragment() {
 
@@ -57,7 +55,7 @@ class FollowingFragment : Fragment() {
     }
 
     private fun setDataToFragment(listFollowing: List<ItemsItem>) {
-        val adapter = FollowAdapter{ item ->
+        val adapter = FollowAdapter { item ->
             navigateToDetailActivity(item.login)
         }
         binding?.apply {

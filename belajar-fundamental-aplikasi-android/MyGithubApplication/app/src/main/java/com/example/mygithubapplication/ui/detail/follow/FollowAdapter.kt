@@ -9,7 +9,8 @@ import com.bumptech.glide.Glide
 import com.example.mygithubapplication.data.response.ItemsItem
 import com.example.mygithubapplication.databinding.ItemRowUserBinding
 
-class FollowAdapter(private val onItemClickCallback: (ItemsItem) -> Unit) : ListAdapter<ItemsItem, FollowAdapter.MyViewHolder>(DIFF_CALLBACK) {
+class FollowAdapter(private val onItemClickCallback: (ItemsItem) -> Unit) :
+    ListAdapter<ItemsItem, FollowAdapter.MyViewHolder>(DIFF_CALLBACK) {
     class MyViewHolder(private val binding: ItemRowUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(user: ItemsItem, onItemClickCallback: (ItemsItem) -> Unit) {

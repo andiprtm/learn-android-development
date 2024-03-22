@@ -55,7 +55,7 @@ class FollowersFragment : Fragment() {
     }
 
     private fun setDataToFragment(listFollowers: List<ItemsItem>) {
-        val adapter = FollowAdapter{ item ->
+        val adapter = FollowAdapter { item ->
             navigateToDetailActivity(item.login)
         }
         binding?.apply {
