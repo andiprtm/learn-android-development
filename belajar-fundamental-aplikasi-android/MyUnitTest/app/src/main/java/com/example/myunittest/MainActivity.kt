@@ -3,7 +3,6 @@ package com.example.myunittest
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -16,7 +15,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -41,12 +39,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             TextUtils.isEmpty(length) -> {
                 binding.edtLength.error = "Field ini tidak boleh kosong"
             }
+
             TextUtils.isEmpty(width) -> {
                 binding.edtWidth.error = "Field ini tidak boleh kosong"
             }
+
             TextUtils.isEmpty(height) -> {
                 binding.edtHeight.error = "Field ini tidak boleh kosong"
             }
+
             else -> {
                 val valueLength = length.toDouble()
                 val valueWidth = width.toDouble()
@@ -56,14 +57,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         mainActivityViewModel.save(valueLength, valueWidth, valueHeight)
                         visible()
                     }
+
                     R.id.btn_calculate_circumference -> {
                         binding.tvResult.text = mainActivityViewModel.getCircumference().toString()
                         gone()
                     }
+
                     R.id.btn_calculate_surface_area -> {
                         binding.tvResult.text = mainActivityViewModel.getSurfaceArea().toString()
                         gone()
                     }
+
                     R.id.btn_calculate_volume -> {
                         binding.tvResult.text = mainActivityViewModel.getVolume().toString()
                         gone()
@@ -74,16 +78,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun gone() {
-        binding.btnCalculateVolume.visibility = View.VISIBLE
-        binding.btnCalculateCircumference.visibility = View.VISIBLE
-        binding.btnCalculateSurfaceArea.visibility = View.VISIBLE
-        binding.btnSave.visibility = View.GONE
-    }
-
-    private fun visible() {
         binding.btnCalculateVolume.visibility = View.GONE
         binding.btnCalculateCircumference.visibility = View.GONE
         binding.btnCalculateSurfaceArea.visibility = View.GONE
         binding.btnSave.visibility = View.VISIBLE
+    }
+
+    private fun visible() {
+        binding.btnCalculateVolume.visibility = View.VISIBLE
+        binding.btnCalculateCircumference.visibility = View.VISIBLE
+        binding.btnCalculateSurfaceArea.visibility = View.VISIBLE
+        binding.btnSave.visibility = View.GONE
     }
 }
