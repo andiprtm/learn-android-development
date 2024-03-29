@@ -1,6 +1,10 @@
 package com.example.mygithubapplication.ui.detail
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -20,6 +24,7 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private val detailActivityViewModel by viewModels<DetailActivityViewModel>()
     private val helper = Render()
+    private lateinit var dataUser: DetailUserResponse
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,9 +60,15 @@ class DetailActivity : AppCompatActivity() {
 
         detailActivityViewModel.userDetail.observe(this) { user ->
             setDataToView(user)
+            dataUser = user
         }
 
         setTabLayoutView()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.detail_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -105,6 +116,20 @@ class DetailActivity : AppCompatActivity() {
             tvCompany.text = user.company ?: resources.getString(R.string.nocompany)
             tvLocation.text = user.location ?: resources.getString(R.string.nolocation)
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_share -> {
+                val sharingIntent = Intent(Intent.ACTION_SEND)
+                sharingIntent.type = "text/plain"
+                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Kunjungi Profil Ini Yuk")
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, dataUser.htmlUrl)
+                startActivity(Intent.createChooser(sharingIntent, "Share using"))
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     companion object {

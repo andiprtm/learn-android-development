@@ -2,6 +2,7 @@ package com.example.mygithubapplication.ui.home
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -37,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         binding.rvMain.layoutManager = layoutManager
 
+        setSupportActionBar(binding.mainToolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setIcon(R.drawable.app_icon_day)
+
         mainActivityViewModel.listGithubUser.observe(this) { listGithubUser ->
             setUserData(listGithubUser)
         }
@@ -67,6 +73,11 @@ class MainActivity : AppCompatActivity() {
                     false
                 }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     private fun setUserData(listGithubUser: List<ItemsItem>) {

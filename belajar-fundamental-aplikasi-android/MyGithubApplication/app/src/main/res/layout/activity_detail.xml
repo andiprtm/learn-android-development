@@ -12,12 +12,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-32dp"
         android:backgroundTint="@color/white"
+        android:layout_gravity="start"
+        android:gravity="start"
         android:elevation="0dp"
         android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="start"
             android:paddingBottom="32dp"
             app:layout_scrollFlags="scroll">
 
@@ -25,7 +28,9 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                android:layout_gravity="start"
+                app:menu="@menu/detail_menu"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -173,8 +178,10 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/stroke_gray"
-            app:tabTextColor="@color/white"
+            android:background="@color/white"
+            app:tabIndicatorColor="@color/stroke_gray"
+            app:tabTextAppearance="@style/TextContent.Title"
+            app:tabTextColor="@color/stroke_gray"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </com.google.android.material.appbar.AppBarLayout>
