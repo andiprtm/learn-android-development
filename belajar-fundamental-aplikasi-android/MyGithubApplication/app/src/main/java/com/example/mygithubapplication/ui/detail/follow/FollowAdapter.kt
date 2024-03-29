@@ -25,7 +25,6 @@ class FollowAdapter(private val onItemClickCallback: (ItemsItem) -> Unit) :
                 }
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

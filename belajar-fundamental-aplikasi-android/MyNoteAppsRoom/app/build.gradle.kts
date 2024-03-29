@@ -1,23 +1,22 @@
-
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.parcelize)
 }
 
 android {
-    namespace = "com.example.mygithubapplication"
+    namespace = "com.example.mynoteappsroom"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.mygithubapplication"
+        applicationId = "com.example.mynoteappsroom"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        buildConfigField("String", "GITHUB_KEY", "\"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\"")
     }
 
     buildTypes {
@@ -37,7 +36,6 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
-        buildConfig = true
         viewBinding = true
     }
 }
@@ -52,8 +50,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation(libs.bundles.retrofit)
-    implementation(libs.bundles.livedata)
-    implementation(libs.androidx.viewpager2)
-    implementation(libs.androidx.splashscreen)
+    implementation(libs.bundles.room)
+    implementation(libs.androidx.roomruntime)
+    ksp(libs.androidx.room)
 }
