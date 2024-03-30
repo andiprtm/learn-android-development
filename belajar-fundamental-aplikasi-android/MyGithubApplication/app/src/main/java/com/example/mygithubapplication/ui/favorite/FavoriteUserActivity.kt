@@ -47,6 +47,7 @@ class FavoriteUserActivity : AppCompatActivity() {
         }
 
         favoriteUserActivityViewModel.getAllFavorites().observe(this) { result ->
+
             if (result != null) {
                 when (result) {
 
@@ -70,6 +71,12 @@ class FavoriteUserActivity : AppCompatActivity() {
                         }
                         binding.rvFavorites.adapter = adapter
                         adapter.submitList(result.data)
+
+                        if (result.data.isEmpty()) {
+                            binding.tvNoData.visibility = View.VISIBLE
+                        } else {
+                            binding.tvNoData.visibility = View.INVISIBLE
+                        }
                     }
                 }
             }
