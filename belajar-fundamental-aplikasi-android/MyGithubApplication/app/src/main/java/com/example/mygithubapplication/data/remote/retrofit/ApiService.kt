@@ -1,8 +1,8 @@
-package com.example.mygithubapplication.data.retrofit
+package com.example.mygithubapplication.data.remote.retrofit
 
-import com.example.mygithubapplication.data.response.DetailUserResponse
-import com.example.mygithubapplication.data.response.GithubResponse
-import com.example.mygithubapplication.data.response.ItemsItem
+import com.example.mygithubapplication.data.remote.response.DetailUserResponse
+import com.example.mygithubapplication.data.remote.response.GithubResponse
+import com.example.mygithubapplication.data.remote.response.ItemsItem
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

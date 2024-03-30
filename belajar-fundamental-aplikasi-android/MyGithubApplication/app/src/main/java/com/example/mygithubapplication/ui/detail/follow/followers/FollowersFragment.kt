@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.mygithubapplication.data.response.ItemsItem
+import com.example.mygithubapplication.data.remote.response.ItemsItem
 import com.example.mygithubapplication.databinding.FragmentFollowBinding
 import com.example.mygithubapplication.ui.detail.DetailActivity
 import com.example.mygithubapplication.ui.detail.follow.FollowAdapter

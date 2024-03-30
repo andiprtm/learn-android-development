@@ -2,28 +2,38 @@ package com.example.mygithubapplication.ui.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.example.mygithubapplication.R
-import com.example.mygithubapplication.data.response.DetailUserResponse
+import com.example.mygithubapplication.data.favorite.entity.UserEntity
+import com.example.mygithubapplication.data.remote.response.DetailUserResponse
 import com.example.mygithubapplication.databinding.ActivityDetailBinding
 import com.example.mygithubapplication.ui.detail.adapter.SectionPageAdapter
+import com.example.mygithubapplication.ui.helper.application.ViewModelFactory
 import com.example.mygithubapplication.util.Render
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
-    private val detailActivityViewModel by viewModels<DetailActivityViewModel>()
+    private val detailActivityViewModel by viewModels<DetailActivityViewModel> {
+        ViewModelFactory.getInstance(applicationContext)
+    }
     private val helper = Render()
     private lateinit var dataUser: DetailUserResponse
+    private var buttonState: Boolean = false
+    private var user: UserEntity? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,15 +61,74 @@ class DetailActivity : AppCompatActivity() {
             }
         }
 
-        detailActivityViewModel.status.observe(this) { status ->
-            status.let {
-                Toast.makeText(this, status.toString(), Toast.LENGTH_SHORT).show()
+        detailActivityViewModel.snackbarText.observe(this) { event ->
+            event.getContentIfNotHandled()?.let { snackbarText ->
+                val snackbar =
+                    Snackbar.make(window.decorView.rootView, snackbarText, Snackbar.LENGTH_SHORT)
+                Render().showSnackbar(
+                    snackbar.view,
+                    snackbarText,
+                    ContextCompat.getColor(this, R.color.danger),
+                    ContextCompat.getColor(this, R.color.white),
+                    binding.fabLike
+                )
+                snackbar.show()
             }
         }
 
         detailActivityViewModel.userDetail.observe(this) { user ->
             setDataToView(user)
             dataUser = user
+
+            this.user = UserEntity().apply {
+                id = user.id
+                login = user.login
+                htmlUrl = user.htmlUrl
+                avatarUrl = user.avatarUrl
+            }
+
+            detailActivityViewModel.getAllFavorites().observe(this) { result ->
+                when (result) {
+                    is com.example.mygithubapplication.data.Result.Success -> {
+                        val favoriteUsers = result.data
+                        user?.let { currentUser ->
+                            for (data in favoriteUsers) {
+                                if (currentUser.id == data.id) {
+                                    buttonState = true
+                                    binding.fabLike.setImageResource(R.drawable.unlike)
+                                }
+                            }
+                        }
+                    }
+
+                    is com.example.mygithubapplication.data.Result.Error -> {
+                        Toast.makeText(this, result.error, Toast.LENGTH_SHORT).show()
+                    }
+
+                    com.example.mygithubapplication.data.Result.Loading -> {
+                        binding.userDetailProgressBar.visibility = View.VISIBLE
+                    }
+                }
+            }
+
+            binding.fabLike.setOnClickListener {
+                if (!buttonState) {
+                    buttonState = true
+                    binding.fabLike.setImageResource(R.drawable.unlike)
+                    insertToDatabase(dataUser)
+                } else {
+                    buttonState = false
+                    binding.fabLike.setImageResource(R.drawable.like)
+                    detailActivityViewModel.delete(dataUser.id)
+                    helper.showSnackbar(
+                        binding.root,
+                        "User has been deleted from favorite.",
+                        ContextCompat.getColor(this, R.color.danger),
+                        ContextCompat.getColor(this, R.color.white),
+                        binding.fabLike
+                    )
+                }
+            }
         }
 
         setTabLayoutView()
@@ -73,6 +142,25 @@ class DetailActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun insertToDatabase(detailList: DetailUserResponse) {
+        user?.let { favoriteUser ->
+            favoriteUser.id = detailList.id
+            favoriteUser.login = detailList.login
+            favoriteUser.htmlUrl = detailList.htmlUrl
+            favoriteUser.avatarUrl = detailList.avatarUrl
+            detailActivityViewModel.insert(favoriteUser)
+
+            helper.showSnackbar(
+                binding.root,
+                "User has been favorited.",
+                ContextCompat.getColor(this, R.color.success),
+                ContextCompat.getColor(this, R.color.white),
+                binding.fabLike
+            )
+
+        } ?: Log.e("DetailActivity", "User is null, cannot insert to database")
     }
 
     private fun setTabLayoutView() {

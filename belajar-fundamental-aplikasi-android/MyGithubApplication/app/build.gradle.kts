@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.parcelize)
 }
 
 android {
@@ -56,4 +58,7 @@ dependencies {
     implementation(libs.bundles.livedata)
     implementation(libs.androidx.viewpager2)
     implementation(libs.androidx.splashscreen)
+    implementation(libs.androidx.roomruntime)
+    implementation(libs.bundles.datastore)
+    ksp(libs.androidx.room)
 }

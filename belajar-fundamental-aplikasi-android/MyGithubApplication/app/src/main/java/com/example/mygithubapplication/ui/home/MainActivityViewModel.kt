@@ -4,15 +4,17 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.mygithubapplication.data.response.GithubResponse
-import com.example.mygithubapplication.data.response.ItemsItem
-import com.example.mygithubapplication.data.retrofit.ApiConfig
+import androidx.lifecycle.asLiveData
+import com.example.mygithubapplication.data.preference.SettingPreferences
+import com.example.mygithubapplication.data.remote.response.GithubResponse
+import com.example.mygithubapplication.data.remote.response.ItemsItem
+import com.example.mygithubapplication.data.remote.retrofit.ApiConfig
 import com.example.mygithubapplication.util.Event
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivityViewModel : ViewModel() {
+class MainActivityViewModel(private val pref: SettingPreferences) : ViewModel() {
 
     private val _listGithubUser = MutableLiveData<List<ItemsItem>>()
     val listGithubUser: LiveData<List<ItemsItem>> = _listGithubUser
@@ -53,6 +55,10 @@ class MainActivityViewModel : ViewModel() {
             }
 
         })
+    }
+
+    fun getThemeSettings(): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
     }
 
     companion object {

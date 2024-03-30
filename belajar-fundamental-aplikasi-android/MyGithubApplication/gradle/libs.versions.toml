@@ -16,6 +16,11 @@ viewPager2 = "1.0.0"
 viewmodel = "2.6.2"
 fragment = "1.2.5"
 splashscreen = "1.0.0"
+ksp = "1.9.0-1.0.13"
+parcelize = "1.9.23"
+room = "2.6.1"
+coroutines = "1.5.2"
+datastore = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,6 +41,11 @@ androidx-viewpager2 = { group = "androidx.viewpager2", name = "viewpager2", vers
 androidx-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "viewmodel" }
 androidx-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "viewmodel" }
 androidx-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "splashscreen" }
+androidx-room = { group = "androidx.room", name = "room-compiler", version.ref="room" }
+androidx-roomruntime = { group = "androidx.room", name = "room-runtime", version.ref="room" }
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+androidx-datastore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 
 [bundles]
 retrofit = [
@@ -50,8 +60,15 @@ livedata = [
     "androidx-activity-ktx",
     "androidx-fragment-ktx"
 ]
+datastore = [
+    "coroutines-android",
+    "coroutines-core",
+    "androidx-datastore"
+]
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "parcelize" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 

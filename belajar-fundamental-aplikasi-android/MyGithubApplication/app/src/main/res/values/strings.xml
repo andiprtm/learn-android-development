@@ -27,4 +27,10 @@
     </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="data_tidak_ditemukan">Data Tidak Ditemukan</string>
+    <string name="favorit_user">favorit user</string>
+    <string name="theme_description">pergantian tema tidak dilakukan otomatis</string>
+    <string name="theme_title">Ganti Tema Aplikasi</string>
+    <string name="share">share</string>
+    <string name="favorite">favorite</string>
+    <string name="setting">setting</string>
 </resources>

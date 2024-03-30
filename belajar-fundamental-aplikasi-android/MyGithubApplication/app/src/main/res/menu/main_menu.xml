@@ -5,13 +5,13 @@
     <item
         android:id="@+id/action_favorite"
         android:icon="@drawable/love"
-        android:title="favorite"
-        app:showAsAction="always" />
+        android:title="@string/favorite"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_setting"
         android:icon="@drawable/setting_day"
-        android:title="setting"
+        android:title="@string/setting"
         app:showAsAction="always" />
 
 </menu>
