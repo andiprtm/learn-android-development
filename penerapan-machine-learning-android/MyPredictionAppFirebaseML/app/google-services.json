@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "846037979575",
+    "project_id": "fir-ml-stock-rice",
+    "storage_bucket": "fir-ml-stock-rice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846037979575:android:a45d1f00e2aada5de09832",
+        "android_client_info": {
+          "package_name": "com.example.mypredictionapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfd1yFRObxA1H83SxLL4FNBJ_bX93tD6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
